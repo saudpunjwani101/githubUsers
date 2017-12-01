@@ -1,0 +1,27 @@
+schema {
+  query: Root
+}
+
+type Root {
+  search(first:Int, query:String!, type: SearchType!): SearchResultItemConnection!
+}
+
+enum SearchType {
+  USER
+}
+
+type SearchResultItemConnection {
+  edges: [SearchResultItemEdge]
+}
+
+type SearchResultItemEdge {
+  node: SearchResultItem
+}
+
+type SearchResultItem implements User {
+  name:String
+}
+
+interface User {
+  name: String
+}
