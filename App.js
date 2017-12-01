@@ -23,7 +23,7 @@ export default class App extends Component {
     if(selected) {
       await this.setState({selected});
     }
-    
+
     await this.setState({searchQuery:value});
   }
 
@@ -39,7 +39,6 @@ export default class App extends Component {
           query={usersQuery}
           variables={{query: this.state.searchQuery.replace('@',''), first:10}}
           render={({error, props}) => {
-            console.log(error)
               if(props) {
                 return (
                   <UsersBox

@@ -13,6 +13,7 @@ class UsersBox extends React.Component {
     )
   }
   renderUsers(users) {
+    console.log(users)
     if(users.edges.length<1) {return <Text>User not found</Text>;}
     let key = 0;
     return users.edges.map(user => {

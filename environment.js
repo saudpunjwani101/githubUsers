@@ -5,6 +5,9 @@ const {
   Store,
 } = require('relay-runtime');
 
+//replace this with your own ApiKey
+const ApiKey = "";
+
 function fetchQuery(
   operation,
   variables,
@@ -15,7 +18,7 @@ function fetchQuery(
     method: 'POST',
     headers: {
       'content-type': 'application/json',
-      "Authorization": "Bearer 44eca79fbbdef6d3ddea1fdbc64bc4b06323c778"
+      "Authorization": `Bearer ${ApiKey}`
     },
     body: JSON.stringify({
       query: operation.text,
